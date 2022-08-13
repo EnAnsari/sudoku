@@ -4,7 +4,6 @@
 
 N = 9
 
-
 def printing(arr):
     for i in range(N):
         for j in range(N):
@@ -33,19 +32,22 @@ def isSafe(grid, row, col, num):
 def solveSudoku(grid, row, col):
     if (row == N - 1 and col == N):
         return True
+
     if col == N:
         row += 1
         col = 0
+    
     if grid[row][col] > 0:
         return solveSudoku(grid, row, col + 1)
+    
     for num in range(1, N + 1, 1):
         if isSafe(grid, row, col, num):
             grid[row][col] = num
-
             if solveSudoku(grid, row, col + 1):
                 return True
-
+    
         grid[row][col] = 0
+    
     return False
 
 
