@@ -1,11 +1,11 @@
-**Complexity Analysis in method 1:**
+**Complexity Analysis**
 
 -   **Time complexity:**  O(9^(n*n)).  
     For every unassigned index, there are 9 possible options so the time complexity is O(9^(n*n)).
 -   **Space Complexity:**  O(n*n).  
     To store the output array a matrix is needed.
 
-**Algorithm method 1:**
+**Algorithm**
 
 1.  Create a function that checks if the given matrix is valid sudoku or not. Keep Hashmap for the row, column and boxes. If any number has a frequency greater than 1 in the hashMap return false else return true;
 2.  Create a recursive function that takes a grid and the current row and column index.
