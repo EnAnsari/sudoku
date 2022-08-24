@@ -1,9 +1,15 @@
+**Method 1:** ***Simple***
+
 **Complexity Analysis**
 
 -   **Time complexity:**  O(9^(n*n)).  
     For every unassigned index, there are 9 possible options so the time complexity is O(9^(n*n)).
 -   **Space Complexity:**  O(n*n).  
     To store the output array a matrix is needed.
+
+**Approach**
+
+    The naive approach is to generate all possible configurations of numbers from 1 to 9 to fill the empty cells. Try every configuration one by one until the correct configuration is found, i.e. for every unassigned position fill the position with a number from 1 to 9. After filling all the unassigned position check if the matrix is safe or not. If safe print else recurs for other cases.
 
 **Algorithm**
 
