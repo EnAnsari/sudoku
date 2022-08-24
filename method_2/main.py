@@ -12,6 +12,16 @@ def printing(arr):
         print()
 
 
+def find_empty_location(arr, l):
+    for row in range(9):
+        for col in range(9):
+            if (arr[row][col] == 0):
+                l[0] = row
+                l[1] = col
+                return True
+    return False
+
+
 def isSafe(grid, row, col, num):
     for x in range(9):
         if grid[row][x] == num:
@@ -30,21 +40,19 @@ def isSafe(grid, row, col, num):
     return True
 
 
-def solveSudoku(grid, row, col):
-    if (row == N - 1 and col == N):
+def solveSudoku(arr):
+    l = [0, 0]
+    if not find_empty_location(arr, l):
         return True
-    if col == N:
-        row += 1
-        col = 0
+    row = l[0]
+    col = l[1]
 
-    if grid[row][col] > 0:
-        return solveSudoku(grid, row, col + 1)
-    for num in range(1, N + 1, 1):
-        if isSafe(grid, row, col, num):
-            grid[row][col] = num
-            if solveSudoku(grid, row, col + 1):
+    for num in range(1, N + 1):
+        if isSafe(arr, row, col, num):
+            arr[row][col] = num
+            if (solveSudoku(arr)):
                 return True
-        grid[row][col] = 0
+            arr[row][col] = 0
     return False
 
 
@@ -52,7 +60,7 @@ print('Enter a 9*9 Matrix with 0 instead of unknown numbers:')
 grid = [list(map(int, input().split())) for i in range(N)]
 
 print('\nResult:')
-if (solveSudoku(grid, 0, 0)):
+if (solveSudoku(grid)):
     printing(grid)
 else:
     print("no solution exists ")
