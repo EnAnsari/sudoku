@@ -5,6 +5,8 @@ Hi, I am Rahmat.
 
 Please give this project a star ⭐
 
-methods:
+**methods:**
+<br>
 <a href="https://github.com/EnAnsari/sudoku/tree/main/method_1">Method 1</a>
+<br>
 <a href="https://github.com/EnAnsari/sudoku/tree/main/method_2">Method 2</a>
